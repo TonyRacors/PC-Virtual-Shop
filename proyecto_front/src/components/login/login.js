@@ -6,9 +6,9 @@ import "./login.css";
 export default class login extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   
-  state = {};
   render() {
 
     return (
@@ -47,7 +47,7 @@ export default class login extends React.Component {
 
                 <Dropdown.Divider/>
 
-                <a href="register">¿Aún no posees una cuenta?</a>
+                <a href="../registro">¿Aún no posees una cuenta?</a>
 
               </Form>
             </Row>

@@ -18,7 +18,7 @@ export default class menu extends React.Component {
       <Navbar fixed="top" bg="primary" variant="dark" expand="lg" id="navbar">
 
         <Container>
-          <Navbar.Brand href="#home">PC Virtual Shop</Navbar.Brand>
+          <Navbar.Brand href="../home">PC Virtual Shop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -33,12 +33,13 @@ export default class menu extends React.Component {
                 <Row>¿Y mí nombre?</Row>
               </Dropdown.Header>
 
+              
+              <Dropdown.Item href="../login">Iniciar sesión</Dropdown.Item>
               <Dropdown.Item href="#/action-1">Mis pedidos</Dropdown.Item>
-
               <Dropdown.Divider/>
 
               <Dropdown.Item href="#/action-2">Cerrar sesión</Dropdown.Item>
-              {/*<Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
+              
             </DropdownButton>
 
           </Navbar.Collapse>
