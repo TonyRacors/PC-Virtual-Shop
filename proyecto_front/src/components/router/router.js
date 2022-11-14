@@ -1,26 +1,40 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Login from "../login/login"
 import Index from "../inicio/index"
 import Register from "../register/register"
+import PrivateRoute from '../auth/privaterouter';
 
 export default function AppRouter() {
     return(
 
         <Router>
-            <Routes>
-                <Route exact path ="/login" element = {<Login/>} />
-                <Route exact path ="/registro" element = {<Register/>} />
-                <Route exact path ="/home" element = {<Index/>} />
-                <Route path ="/*" element = {(
-                    <h1 style={{marginTop:300}}>
+            <Switch>
+                <Route exact path ={["/login"]} component = {Login} />
+                <Route exact path ={["/registro"]} component = {Register} />
+                
+                <Route exact path ={["/","/home"]} component = {Index} />
+                {/* <PrivateRoute exact path ={["/home"]} component = {Privado} /> 
+
+                    ¿Qué se podría ver solo si posee un usuario autenticado?
+                */}
+
+                <Route path ={["*"]} component = {()=> (
+                    <h1 style={{marginTop:200 }}>
                         404 <br/> Página no encontrada
                     </h1>
                 )} />
-                <Route exact path ="/" element = {<Index/>} />
                 
-            </Routes>
+            </Switch>
         </Router>
+    )
+}
+
+function Privado() {
+    return (
+        <h2>
+            ¿No estoy autenticado?
+        </h2>
     )
 }
