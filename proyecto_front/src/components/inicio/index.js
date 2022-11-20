@@ -3,7 +3,7 @@ import React from 'react';
 import { Container} from "react-bootstrap";
 import "./index.css"
 
-export default  class index extends React.Component {
+export default class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = { }

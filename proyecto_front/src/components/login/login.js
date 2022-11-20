@@ -13,7 +13,7 @@ import { calcularExpirarSesion } from "../helper/helper";
 const {APIHOST} = app;
 const cookies = new Cookies();
 
-export default class login extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +41,8 @@ export default class login extends React.Component {
           path:'/',
           expires: calcularExpirarSesion(),
         });
+
+        this.props.history.push(window.open("/configuracion"));
       }
 
       this.setState({ loading:false });
